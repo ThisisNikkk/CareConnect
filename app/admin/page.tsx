@@ -7,7 +7,12 @@ import { DataTable } from "@/components/table/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
 
 const AdminPage = async () => {
-  const appointments = await getRecentAppointmentList();
+  const appointments = (await getRecentAppointmentList()) || {
+    scheduledCount: 0,
+    pendingCount: 0,
+    cancelledCount: 0,
+    documents: [],
+  };
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
@@ -36,19 +41,19 @@ const AdminPage = async () => {
         <section className="admin-stat">
           <StatCard
             type="appointments"
-            count={appointments.scheduledCount || 0}
+            count={appointments.scheduledCount }
             label="Scheduled appointments"
             icon={"/assets/icons/appointments.svg"}
           />
           <StatCard
             type="pending"
-            count={appointments.pendingCount || 0}
+            count={appointments.pendingCount }
             label="Pending appointments"
             icon={"/assets/icons/pending.svg"}
           />
           <StatCard
             type="cancelled"
-            count={appointments.cancelledCount || 0}
+            count={appointments.cancelledCount}
             label="Cancelled appointments"
             icon={"/assets/icons/cancelled.svg"}
           />
