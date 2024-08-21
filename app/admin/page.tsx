@@ -19,11 +19,11 @@ const AdminPage = async () => {
       <header className="admin-header">
         <Link href="/" className="cursor-pointer">
           <Image
-            src="/assets/icons/logo-full.svg"
-            height={32}
+            src="/assets/icons/logo-full.png"
+            height={40}
             width={162}
             alt="logo"
-            className="h-8 w-fit"
+            className="h-10 w-fit"
           />
         </Link>
 

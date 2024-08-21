@@ -47,7 +47,7 @@ automaticVercelMonitors: true,
 // https://github.com/getsentry/sentry-webpack-plugin#options
 
 org: "thisisnikkk",
-project: "javascript-nextjs",
+project: "careconnect",
 
 // Only print logs for uploading source maps in CI
 silent: !process.env.CI,
